@@ -1,0 +1,7 @@
+charset,UTF-8
+type,ghost
+
+name,Xander's Refuge
+directory,xanders_refuge_zi
+
+balloon.directory,flip_of_a_coin_zi

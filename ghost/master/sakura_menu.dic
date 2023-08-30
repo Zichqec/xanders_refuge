@@ -1,0 +1,151 @@
+OnMouseDoubleClick
+{
+	if reference5 == 0; OnSakuraMenu
+}
+
+SakuraMenuGreetings
+{
+	nonoverlap : /
+	{
+		"\s[11]"
+		"\s[111]"
+		"\s[113]"
+		"\s[211]"
+		"\s[213]"
+		"\s[30]"
+		"\s[31]"
+		"\s[130]"
+		"\s[131]"
+		"\s[230]"
+		"\s[231]"
+	}
+	--
+	nonoverlap : /
+	{
+		"Mm?"
+		"What?"
+		"Human?"
+		"Mortal?"
+		"Be quick."
+		"Speak, mortal."
+		"Mm? What is it?"
+		"What is it now?"
+		"What do you want?"
+		"You want something?"
+		"Is there a problem?"
+		"You have something to say to me?"
+		"You have my attention, for a moment."
+		"If you're looking for good luck, I don't give handouts."
+		if AskedGods == 1; "Can't a deity from aeons past smoke in peace?"
+	}
+}
+
+OnSakuraMenu : all
+{
+	//This stuff to do with the Eventid is just checking if the user opened the menu normally or if it was reopened by selecting a talk rate
+	if SHIORI3FW.Eventid != "OnMouseDoubleClick"; "\C\![lock,balloonrepaint]\c"
+	"\0\![set,autoscroll,disable]"
+	
+	
+	_greet = ""
+	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; _greet = SakuraMenuGreetings
+	elseif reference0 != "";_greet = reference0
+	
+	"\n\n\n\![quicksection,true]\![no-autopause]"
+	
+	"\![*]\q[Talk to me,OnAiTalk]"
+	if LastTalk != ""; "  \![*]\q[Say that again,OnLastTalk]"
+	"\n"
+	
+	"\![*]%(StoryQuestion)"
+	
+	"\n\n"
+	
+	"\![*]Talkrate: "
+	_times = ("Off,0","1m,60","3m,180","5m,300","10m,600","15m,900")
+	
+	foreach _times; _time
+	{
+		switch TOINT(_time[1]) == aitalkinterval
+		{
+			"\__q[OnChangeTalkrate,%(_time[1]),""%(_greet)""]%(_time[0])\__q "
+			"\_a[OnChangeTalkrate,%(_time[1]),""%(_greet)""]%(_time[0])\_a "
+		}
+	}
+	"\n\n"
+	"\![*]\q[Nevermind,OnMenuClose]"
+	
+	"\_l[0,0]"
+	
+	if SHIORI3FW.Eventid == "OnMouseDoubleClick";
+	{
+		_greet = OnTranslateInternal.AutoPause(_greet)
+		"\![quicksection,false]"
+	}
+	_greet
+}
+
+OnLastTalk
+{
+	LastTalk
+}
+
+//Determines which story question should be displayed in the menu currently
+StoryQuestion
+{
+	if AskedGods == 1
+	{
+		if StoryIndex == 1
+		{
+			if KnowDueyar
+			{
+				"\__q[OnStory,Upset Dueyar]What did you do to upset Dueyar?\__q"
+			}
+			else
+			{
+				"\__q[OnAskGods,Dueyar]Who's Dueyar?\__q"
+			}
+		}
+		elseif StoryIndex == 2
+		{
+			if KnowAion
+			{
+				"\__q[OnStory,Problem with fate]Why do you have such a problem with fate?\__q"
+			}
+			else
+			{
+				"\f[color,disable]What did you do to upset Dueyar?\f[color,default]"
+			}
+		}
+		elseif StoryIndex == 3
+		{
+			if KnowSajun || KnowMalous
+			{
+				"\__q[OnStory,Sajun and Malous]What happened with Sajun and Malous?\__q"
+			}
+			else
+			{
+				"\f[color,disable]Why do you have such a problem with fate?\f[color,default]"
+			}
+		}
+		else //0
+		{
+			"\__q[OnStory,Hiding in a cave]Why is an immortal god hiding in a cave?\__q"
+		}
+	}
+	else
+	{
+		"\__q[OnStory]Why are you hiding in a cave?\__q"
+	}
+}
+
+OnChangeTalkrate
+{
+	aitalkinterval = TOINT(reference0)
+	"\C\![no-autopause]\![raise,OnSakuraMenu,""%(reference1)""]"
+}
+
+OnMenuClose
+{
+	"\_w[%((RAND(3) + 1) * 1000)]%(OnSurfaceRestore)\_w[3000]"
+}

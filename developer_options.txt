@@ -1,0 +1,4 @@
+.gitignore,nonar,noupdate
+.gitattributes,nonar,noupdate
+.git/,nonar,noupdate
+flip_of_a_coin_zi/,noupdate

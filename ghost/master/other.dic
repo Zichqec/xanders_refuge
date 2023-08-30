@@ -1,0 +1,208 @@
+OnTranslate
+{
+	_talk = reference0
+	
+	if reference1 == "" && reference2 == ""
+	{ //send input box : no event (ref2) , no special flag (ref1)
+		_talk = EVAL('"' + REPLACE(_talk,'"','""') + '"')
+		_talk = OnTranslateInternal.AutoPause(_talk)
+	}
+	
+	_talk = REPLACE(_talk,"@Zichqec","\_a[https://ukagaka.zichqec.com/]Zichqec\_a")
+	_talk = REPLACE(_talk,"—","\f[name,calibri]—\f[name,default]")
+	
+	_talk = REPLACE(_talk,"@Aion","\_a[OnAskGods,Aion]Aion\_a")
+	_talk = REPLACE(_talk,"@Dueyar","\_a[OnAskGods,Dueyar]Dueyar\_a")
+	_talk = REPLACE(_talk,"@Xaeyar","\_a[OnAskGods,Xaeyar]Xaeyar\_a")
+	_talk = REPLACE(_talk,"@Iella","\_a[OnAskGods,Iella]Iella\_a")
+	_talk = REPLACE(_talk,"@Enva","\_a[OnAskGods,Enva]Enva\_a")
+	_talk = REPLACE(_talk,"@Kasarae","\_a[OnAskGods,Kasarae]Kasarae\_a")
+	_talk = REPLACE(_talk,"@Nyphine","\_a[OnAskGods,Nyphine]Nyphine\_a")
+	_talk = REPLACE(_talk,"@Tysus","\_a[OnAskGods,Tysus]Tysus\_a")
+	_talk = REPLACE(_talk,"@Gabin","\_a[OnAskGods,Gabin]Gabin\_a") //TODO lol
+	_talk = REPLACE(_talk,"@Meiyr","\_a[OnAskGods,Meiyr]Meiyr\_a")
+	_talk = REPLACE(_talk,"@Tohmjir","\_a[OnAskGods,Tohmjir]Tohmjir\_a")
+	_talk = REPLACE(_talk,"@Nemara","\_a[OnAskGods,Nemara]Nemara\_a")
+	_talk = REPLACE(_talk,"@Thaelia","\_a[OnAskGods,Thaelia]Thaelia\_a")
+	_talk = REPLACE(_talk,"@Vismir","\_a[OnAskGods,Vismir]Vismir\_a")
+	_talk = REPLACE(_talk,"@Sajun","\_a[OnAskGods,Sajun]Sajun\_a")
+	_talk = REPLACE(_talk,"@Malous","\_a[OnAskGods,Malous]Malous\_a")
+	_talk = REPLACE(_talk,"@Nevris","\_a[OnAskGods,Nevris]Nevris\_a")
+	
+	TOSTR(_talk)
+}
+
+OnTranslateInternal.AutoPause
+{
+	_talk = _argv[0]
+	
+	if "\![no-autopause]" !_in_ _talk
+	{
+		_talk = REPLACE(_talk,", ",",\w4\![where how] ") // ,
+		_talk = REPLACE(_talk,". ",".\w8\w8 ") // .
+		_talk = REPLACE(_talk,"? ","?\w8\w8 ") // ?
+		_talk = REPLACE(_talk,"! ","!\w8\w8 ") // !
+		_talk = REPLACE(_talk,"; ",";\w8 ") // ;
+		_talk = REPLACE(_talk,": ",":\w8 ") // :
+		_talk = REPLACE(_talk,"\n\n ","\n\n\w8\w8") // linebreak
+	}
+	
+	_talk
+}
+
+OnAiTalk
+{
+	if CHAIN.IDName == ""
+	{
+		LastTalk = RandomTalk
+	}
+	else
+	{
+		LastTalk = ChainTalk
+	}
+	LastTalk
+}
+
+
+//Makes anchors with links jump to those links
+OnAnchorSelect
+{
+	if "http://" _in_ reference0 || "https://" _in_ reference0; "\j[""%(reference0)""]"
+}
+
+//Hotkeys
+OnKeyPress
+{
+	if reference0 == "f1"; "\![open,readme]"
+	elseif reference0 == "t"; OnAiTalk
+	elseif reference0 == "r"; OnLastTalk
+}
+
+//Happens about 30 seconds after a script ends, by default, to bring them back to normal poses
+OnSurfaceRestore
+{
+	"\1\s[-1]\0"
+	--
+	if RAND(4) == 0
+	{
+		_surface = ANY(0,2)
+		_time = (RAND(2) + 1) * 1000 //1-2 seconds
+		smoke(_surface,_time,_time + 500,_time)
+		--
+		"\s[%(_surface)13]"
+	}
+	else
+	{
+		"\s[0]"
+		"\s[13]"
+		"\s[20]"
+		"\s[22]"
+		"\s[200]"
+		"\s[213]"
+		"\s[220]"
+		"\s[222]"
+	}
+}
+
+//A little bit of custom code to make him do surface restore randomly between dialogues, to make him a little more lively
+OnSecondChange
+{
+	_since = GETSECCOUNT - SHIORI3FW.TalkEndTime
+	
+	//Every 15 seconds
+	if _since % 15 == 0 && !BalloonIsOpen
+	{
+		if RAND(4) == 0; OnSurfaceRestore
+	}
+}
+
+//As the name implies, this checks if the balloon is currently open or not.
+//Will be 0 if the balloon is not open, and 1 if the balloon is open
+BalloonIsOpen
+{
+	"balloon" _in_ var.req.value[ASEARCH("Status",var.req.key)]
+}
+
+//Happens when the ghost is unminimized. You *can* include dialogue, but you don't *have* to. I have included this event because if you don't, it defaults to \0\s[0]\1\s[10], which you don't want in some cases, such as if your ghost uses different surfaces or has a different number of characters.
+OnWindowStateRestore
+{
+	OnSurfaceRestore
+}
+
+On_homeurl
+{
+	""
+}
+
+ghostver
+{
+	"v1.0.0"
+}
+
+
+//—————————————————————————————— Right click menu links ——————————————————————————————
+
+//Takes an array of alternating names and urls, and formats them for use with the right click menu
+FormatLinks : all
+{
+	for _i = 0; _i < ARRAYSIZE(_argv); _i++
+	{
+		_argv[_i] //Add the link/title
+		//Alternate between adding %ASC(1) or %ASC(2)
+		if _i % 2 == 1; "%ASC(2)"
+		else; "%ASC(1)"
+	}
+}
+
+On_sakura.recommendsites
+{
+	FormatLinks(recommendsites_sakura)
+}
+
+//These are the websites linked in the top option of the sakura's right click menu. The format is simple; write the label of the link on the left followed by a semicolon, and then on the right, the url to link to. These should be separate strings.
+recommendsites_sakura : array
+{
+	"Zi's Ukagaka Space";	"https://ukagaka.zichqec.com/"
+}
+
+On_sakura.portalsites 
+{
+	FormatLinks(portalsites_sakura)
+}
+
+username
+{
+	SHIORI3FW.UserName
+}
+
+br
+{
+	if SHIORI3FW.BalloonName == "Flip of a Coin"; "\n"
+	else; " "
+}
+
+//Just a dev thing so I can quickly check how many dialogues he has
+On_getaistateex : all
+{
+    _graph = AI_Graphs[reference0]
+    if _graph != ""
+    {
+        _items = SPLIT(_graph,",")
+        for _i = 0; _i < ARRAYSIZE(_items); _i++
+        {
+            if _i > 0; ","
+            OUTPUTNUM("%(_items[_i])")
+        }
+        C_BYTE1
+        for _i = 0; _i < ARRAYSIZE(_items); _i++
+        {
+            if _i > 0; ","
+            "%(_items[_i])"
+        }
+    }
+}
+
+AI_Graphs : array
+{
+    "RandomTalk,overthere,closeshave,weirdinvention"
+}
