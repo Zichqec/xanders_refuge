@@ -131,7 +131,7 @@ OnWindowStateRestore
 
 On_homeurl
 {
-	""
+	"https://raw.githubusercontent.com/Zichqec/xanders_refuge/main/"
 }
 
 ghostver
