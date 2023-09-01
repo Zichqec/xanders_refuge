@@ -17,8 +17,8 @@ validrect.bottom,-15
 
 wordwrappoint.x,-25
 
-font.name,Garamond
-font.height,13
+font.name,Calibri
+font.height,14
 font.color.r,094
 font.color.g,065
 font.color.b,052
@@ -66,8 +66,8 @@ sstpmessage.font.color.b,213
 sstpmessage.x,14
 sstpmessage.y,0
 
-number.font.name,Garamond
-number.font.height,12
+number.font.name,Calibri
+number.font.height,13
 number.font.color.r,135
 number.font.color.g,123
 number.font.color.b,118

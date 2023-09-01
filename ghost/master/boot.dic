@@ -13,7 +13,7 @@ OnFirstBoot : all
 	"\s[11]Hm? \w8\s[0]Oh, a human. \n\n%(smoke)\s[213]\w8\w8\w8\s[200]Is there a reason you're bothering me? \n\n "
 	"\s[211]... \w8\w8\w8\s[220]Nah, forget it. The look on your face says enough. \n\n "
 	"\s[111]Well, listen. I'm feeling generous. \s[100]You can hang out with the great Xaeyar on one condition: \w8\s[230]not a word to anyone that I'm here. \n\n "
-	"\s[0]I won't tell anyone you're hiding, you won't tell anyone I'm hiding. \s[111]Fair?\n\n "
+	"\s[0]I won't tell anyone you're hiding, you%(br)won't tell anyone I'm hiding. \s[111]Fair?\n\n "
 
 	"\_q\![*]\q[Fair.,OnFirstBootEnd,Fair]  \![*]\q[Who's Xaeyar?,OnFirstBootEnd,Who]"
 }
@@ -41,13 +41,13 @@ OnBoot
 
 	"\1\s[-1]\0\s[0]"
 	--
-	"\0\s[11]Hm? Oh, \s[0]it's just you again. %(smoke)\s[30]What's up?"
+	"\0\s[11]Hm? Oh, \s[0]it's just you again. \n\n %(smoke)\s[30]What's up?"
 	"\0\s[11]The human appears. Greetings."
 	"\0\s[22]... \w8\w8\w8\n\n\s[11]Ah- \w8\s[30]when did you get here? \w8\w8\s[222]Well, I suppose I could do worse for company."
 	"\0\s[0]Hey. \w8\w8%(smoke)\s[200]"
 	"\0\s[11]There you are. \s[0]I knew you'd be coming."
 	"\0\s[11]Hey. \s[211]You didn't see @Dueyar out there looking for me, did you? \n\n \s[220]I suppose not, you don't look terrified enough for that. %(smoke(2))\s[200]"
-	"\0\s[11]Mm? \s[111]Oh, hey. \s[22]I was just thinking I might head out. \n\n %(smoke)\s[13]Ah, what the hell, a few more hours%(br)won't kill 'em."
+	"\0\s[11]Mm? \s[111]Oh, hey. \s[22]I was just thinking I might head out. \n\n %(smoke)\s[13]Ah, what the hell, a few more hours won't%(br)kill 'em."
 	"\0\s[11]You've decided to join me today, have you?"
 	"\0\s[11]It's the human again. \s[0]Still hiding, are we?"
 	"\0\s[11]Ah, I am graced with the presence of the mortal. \s[0]What can this deity do for you on such a dreary day."
@@ -65,10 +65,10 @@ OnClose : pool
 	"\0\s[111]Done running from your problems? \n\n \s[13]I'm not, I'll be here a while yet if you decide you want to come back."
 	"\0\s[11]I'll be here if you decide to come by again."
 	"\0\s[222]Leaving me by myself, eh? \n\n \s[211]Fair enough, off you go."
-	"\0\s[200]I should get going before I'm missed. \s[211]I'm%(br)sure I'll be back this way again."
+	"\0\s[200]I should get going before I'm missed. \s[211]I'm sure I'll be back this way again."
 	"\0\s[11]Mm? On your way out? \s[0]So long, then."
 	"\0\s[0]Don't get lost on the way home."
-	"\0\s[0]Best hurry if you're heading out, there's rain on the way. \s[111]Someone else in town is in need of a good drenching, \s[11]but you don't have to be caught up in it if you're quick."
+	"\0\s[0]Best hurry if you're heading out, there's rain on the way. \s[111]Someone else in town is in need of a good drenching, \s[11]but you don't%(br)have to be caught up in it if you're quick."
 	"\0\s[11]Until next time, then. \s[0]I'll be around this area for the foreseeable future."
 	"\0\s[11]Tired of my company at last? \s[0]Or perhaps you have other places to be. \s[30]Off you go, then."
 	
@@ -76,7 +76,7 @@ OnClose : pool
 	{
 		"\0\s[11]Good luck out there."
 		"\0\s[11]Best of luck to you."
-		"\0\s[30]Oh, you're heading out? \w8\w8\s[0]Take care, then. Don't go and get eaten by a monster. \s[11]I'd%(br)hate to lose my responsibility-avoiding buddy."
+		"\0\s[30]Oh, you're heading out? \w8\w8\s[0]Take care, then. Don't go and get eaten by a monster. \s[11]I'd hate to lose my responsibility-avoiding buddy."
 	}
 	--
 	"\_w[1000]\-"
