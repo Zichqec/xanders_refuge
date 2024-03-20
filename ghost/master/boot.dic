@@ -54,7 +54,7 @@ OnBoot
 	
 	if TotalBoots > 3
 	{
-		"\0\s[11]I was wondering if you'd show up today. \s[0]We seem to end up here together other a lot."
+		"\0\s[11]I was wondering if you'd show up today. \s[0]We seem to end up here together a lot."
 		"\0\s[11]I wasn't expecting to see you today. \s[0]Not that I particularly mind your presence."
 	}
 }
