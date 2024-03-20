@@ -1,11 +1,11 @@
 developer_options.txt8f03b20804dd228c978267f24147ccabsize=107date=2023-08-30T01:24:03charset=OSNative
 ghost/master/aitalk.dicefbc08545ca664721b0e450a4150d284size=25789date=2023-08-31T20:28:11
-ghost/master/boot.dic920ca7847c3adc0bef60b97aec526811size=4040date=2023-08-31T20:37:30
-ghost/master/descript.txt8f16ab465345b6c583c4f6b56a375901size=228date=2023-08-31T19:41:10
+ghost/master/boot.dic2640edaa908da07cb31f73078ff357a3size=4034date=2024-03-20T19:14:45
+ghost/master/descript.txtae543d8799948b06b40357753c10bd81size=260date=2024-03-20T19:24:46
 ghost/master/emerg.dicc7cb6eacd3262003fef909c382a6fefesize=351date=2023-04-14T15:45:50
-ghost/master/meta.dicff7ca3e3a4d2bae672e105f7ff41ca70size=3378date=2023-08-28T18:19:23
-ghost/master/other.dicf3822cca8bee05bf0201e5b062c4c0e3size=5588date=2023-08-31T20:29:11
-ghost/master/response.dicb85399c412a46173758b02aa5d987368size=16195date=2023-08-31T20:24:00
+ghost/master/meta.diccecf44203f24f5d2b21f0983e2f1a79dsize=6024date=2024-03-20T19:32:11
+ghost/master/other.dicb9ed1fef74d1317b45e6421b83fad8b9size=6635date=2024-03-20T19:36:17
+ghost/master/response.dicb85399c412a46173758b02aa5d987368size=16195date=2024-03-20T19:27:27
 ghost/master/sakura_menu.dic89417dbdd5e0b2ffdbbeae203d06e602size=3071date=2023-08-29T00:34:15
 ghost/master/smocon.icoe1c1c47fd9d8fbbf46b5542b27cd7897size=101222date=2023-08-25T20:36:47
 ghost/master/word.dicdffe223455c4f056d79acd004c008859size=2068date=2023-08-29T00:49:05
@@ -19,7 +19,7 @@ ghost/master/yaya_base/shiori3.dicc9a84b1a03c2bc65507c40e63b6cbde2size=54845d
 ghost/master/yaya_emerg.txt9e43b4696366a536ecc69e45d80e392csize=607date=2023-04-14T15:44:19
 install.txt9828e9018e84d3b2b3df81d32c2cc976size=117date=2023-08-30T01:24:33
 readme.txtc330bb04750543d099f6156cc15c7d5esize=737date=2023-08-30T01:26:47
-shell/master/descript.txt4562dc854ff10864e501632ca86dc2b7size=99date=2023-08-09T02:24:22
+shell/master/descript.txt62aa8d7e69d3f4c253b4e8b23f249acesize=153date=2024-03-20T19:21:41
 shell/master/surface0.png7569c4f679efd220ccee045d262ca217size=13695date=2023-08-29T21:34:02
 shell/master/surface10.png584286ee24f707c1a221be1c86989439size=92date=2023-08-11T23:11:20
 shell/master/surface100.png90d26f61dd3d172654f1da38d2730906size=13771date=2023-08-29T21:36:41
@@ -102,6 +102,6 @@ shell/master/surface911.pngbe32d7b42db3a4ea472e30facc8a047fsize=707date=2023-
 shell/master/surface912.png6b3318172102d0b7fa0fe73b31017ca8size=715date=2023-08-23T00:42:46
 shell/master/surface920.png661f82c61177a94c0e5c0c6678f503aesize=1011date=2023-08-23T00:43:05
 shell/master/surface921.png0257c007fa9eecae8232d13d8dab00dcsize=968date=2023-08-23T00:43:15
-shell/master/surfaces.txtab54a734678a1e3461b7a2f91eebfb1csize=6033date=2023-08-30T01:19:37
+shell/master/surfaces.txtab54a734678a1e3461b7a2f91eebfb1csize=6033date=2024-03-20T19:21:29
 shell/master/surfacetable.txt417293630d90b0c00a884811b6da2218size=577date=2023-08-13T23:25:11
 thumbnail.png307012a9c190e189c7cf9b833a5cfe67size=8376date=2023-08-30T01:50:35
