@@ -6,7 +6,7 @@ RandomTalk : nonoverlap_pool
 	
 	"\0\s[111]Did you see they were hanging up banners in town? \s[11]Seems like another festival will be happening soon. \s[0]@Tohmjir and @Vismir will be happy. Where there's festivals there's drinking, and where there's drinking you'll find those two."
 	
-	"\0\s[0]I have a strange mix of followers. \s[11]You have all the people that are only acquainted with my domain on a surface level. \s[111]You've seen them, I'm sure. The ones that will buy trinkets and tokens said to bring my favor, and take them everywhere they go. \s[0]They want good luck,%(br)and they don't think any more of it. \n\n \s[130]You also have the extremely devoted kind that follow me primarily, and claim to understand my domain, when they're really just as ignorant as the ones who buy tokens. \s[31]They're often trying to sway me to give bad luck to someone they're upset with. \n\n %(smoke(2))\s[200]Somewhere out there are a few folk who truly understand the purpose of luck and%(br)\f[italic,1]aren't\f[italic,default] just trying to manipulate it in their favor. \s[211]It's not many."
+	"\0\s[0]I have a strange mix of followers. \s[11]You have all the people that are only acquainted with my domain on a surface level. \s[111]You've seen them, I'm sure. The ones that will buy trinkets and tokens said to bring my favor, and take them everywhere they go. \s[0]They want good luck,%(br)and they don't think any more of it. \n\n \s[130]You also have the extremely devoted kind that follow me primarily, and claim to understand my domain, when they're really just as ignorant as the ones who buy tokens. \s[31]They're often trying to sway me to give bad luck to someone they're upset with. \n\n %(smoke(2))\s[200]Somewhere out there are a few folks who truly understand the purpose of luck and%(br)\f[italic,1]aren't\f[italic,default] just trying to manipulate it in their favor. \s[211]It's not many."
 	
 	"\0\s[11]I hear @Sajun and @Malous were out terrorizing the townsfolk again. \s[0]I'm glad you appear to have missed the festivities."
 	
@@ -62,7 +62,7 @@ RandomTalk : nonoverlap_pool
 	
 	"\0\s[13]I saw they're putting up a new building %(overthere). \s[11]I wonder what it'll be; another pub or yet another auto parts store. \s[0]Maybe it'll be both."
 	
-	"\0\s[231]Some lady had the nerve to call me ""repulsive"". \s[220]Can't a guy smoke a dozen packs of cigarettes behind the store without being harassed?"
+	"\0\s[231]Some lady had the nerve to call me%(br)""repulsive"". \s[220]Can't a guy smoke a dozen packs of cigarettes behind the store without being harassed?"
 	
 	"\0\s[200]One of my priests had a close shave with death recently. He %(closeshave). \s[211]Not even my doing; sometimes all the luck in the world doesn't mean you'll have a good outcome. \n\n\s[222]It's a shame, he's been one of my favorites, but it looks like he'll be out for a little while."
 	
@@ -120,7 +120,7 @@ RandomTalk : nonoverlap_pool
 	
 	"\0\s[220]@Iella and @Enva threw another one of their lavish parties recently. \s[213]I always skip those ones, they're exhausting. \n\n \s[0]I'd rather get drunk with @Tohmjir and%(br)@Nemara than sit about swirling wine and complaining that it isn't exactly the right temperature."
 	
-	"\0\s[22]I worry for @Nevris at times. \s[122]She says she's doing well, \w4\s[222]but she never gets time to rest. \n\n %(smoke)\s[0]There's not really anything I can do for her though, she controls her domain very tightly and won't let anyone else interfere.%(br)\s[13]That's going to bite her one of these days."
+	"\0\s[22]I worry for @Nevris at times. \s[122]She says she's doing well, \w4\s[222]but she never gets time to rest. \n\n %(smoke)\s[0]There's not really anything I can do for her though, she controls her domain very tightly and won't let anyone else interfere.\w8\w8%(br)\s[13]That's going to bite her one of these days."
 	
 	"\0\s[0]Sometimes I like to rile @Kasarae up a little. \s[111]It's so easy to get her frustrated, \w4\s[11]and it keeps things lively."
 	
@@ -158,7 +158,7 @@ RandomTalk : nonoverlap_pool
 	
 	"\0\s[0]Luck makes for very sudden changes at times. \s[11]One minute everything is going swimmingly, the next you've broken a leg. \s[130]Or worse; things can always be a lot worse. \s[230]I will absolutely admit that the words ""it can't get any worse"" are very enticing for me. \n\n \s[20]Sure your breakup seems bad, until your house is on fire. \s[21]And all of the fire stations are tied up. \s[121]And once everything has burned out, the clouds finally burst and there's a flash flood, carrying everything that was left in the ashes away."
 	
-	"\0\s[11]People are always trying to find things that I like in order to gain my favor. \s[0]Some of them are correct; I do indeed like clover, and the four-leafed variety are always nice to see. \s[100]Ladybugs are good too;\w8%(br)my favorite of the insects if I had to pick one. \n\n \s[231]But you know what nobody ever thinks of?\w8%(br)Lighting. Use a reasonable amount lighting in your homes and my temples, and make sure the colors are good for the room. \n\n%(smoke(2))\s[200]I don't see why they don't pick up on this more easily, the correlation is obvious."
+	"\0\s[11]People are always trying to find things that I like in order to gain my favor. \s[0]Some of them are correct; I do indeed like clover, and the four-leafed variety are always nice to see. \s[100]Ladybugs are good too;\w8%(br)my favorite of the insects if I had to pick one. \n\n \s[231]But you know what nobody ever thinks of?\w8%(br)Lighting. Use a reasonable amount of lighting in your homes and my temples, and make sure the colors are good for the room. \n\n%(smoke(2))\s[200]I don't see why they don't pick up on this more easily, the correlation is obvious."
 	
 	"\0\s[0]Mortal teachings about the gods are never accurate. \s[0]We don't often bother to try correcting them though, usually that just makes things worse. \n\n \s[113]And even if we got one of them to understand, their teachings would simply be misinterpreted by future mortals after their death anyhow. \s[22]It's something of a lost cause."
 	
