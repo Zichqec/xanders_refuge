@@ -19,7 +19,7 @@ OnTranslate
 	_talk = REPLACE(_talk,"@Kasarae","\_a[OnAskGods,Kasarae]Kasarae\_a")
 	_talk = REPLACE(_talk,"@Nyphine","\_a[OnAskGods,Nyphine]Nyphine\_a")
 	_talk = REPLACE(_talk,"@Tysus","\_a[OnAskGods,Tysus]Tysus\_a")
-	_talk = REPLACE(_talk,"@Gabin","\_a[OnAskGods,Gabin]Gabin\_a") //TODO lol
+	_talk = REPLACE(_talk,"@Gabin","\_a[OnAskGods,Gabin]Gabin\_a")
 	_talk = REPLACE(_talk,"@Meiyr","\_a[OnAskGods,Meiyr]Meiyr\_a")
 	_talk = REPLACE(_talk,"@Tohmjir","\_a[OnAskGods,Tohmjir]Tohmjir\_a")
 	_talk = REPLACE(_talk,"@Nemara","\_a[OnAskGods,Nemara]Nemara\_a")
@@ -38,7 +38,7 @@ OnTranslateInternal.AutoPause
 	
 	if "\![no-autopause]" !_in_ _talk
 	{
-		_talk = REPLACE(_talk,", ",",\w4\![where how] ") // ,
+		_talk = REPLACE(_talk,", ",",\w4 ") // ,
 		_talk = REPLACE(_talk,". ",".\w8\w8 ") // .
 		_talk = REPLACE(_talk,"? ","?\w8\w8 ") // ?
 		_talk = REPLACE(_talk,"! ","!\w8\w8 ") // !
@@ -228,4 +228,42 @@ OnNeedlePoke : nonoverlap
 	"\0\s[0]Oh my, such a vicious attack. \s[11]I'm shaking in my boots."
 	"\0\s[0]Taking out some frustration, are we?"
 	"\0\s[11]That puny ""weapon"" of yours is only barely perceptible to me, for your information."
+}
+
+OnSpectrePlugin.ConfirmCalibration
+{
+	//Add expression names as references here in any order that should be omitted from the calibration...
+	"\![raiseplugin,Spectre,OnCustomCalibrationConfirm,embarrassed,smile,relieved,sweat,indignant]"
+}
+
+OnSpectrePlugin.Surface
+{
+	if reference0 == "normal"; "\s[11]"
+	//elseif reference0 == "embarrassed"; "\s[14]"
+	elseif reference0 == "surprised"; "\s[30]"
+	elseif reference0 == "anxious"; "\s[22]"
+	elseif reference0 == "discouraged"; "\s[13]"
+	//elseif reference0 == "smile"; "\s[1]"
+	//elseif reference0 == "relieved"; "\s[4]"
+	elseif reference0 == "angry"; "\s[21]"
+	//elseif reference0 == "sweat"; "\s[9]"
+	//elseif reference0 == "indignant"; "\s[3]\i[6]"
+	elseif reference0 == "thinking"; "\s[222]"
+	elseif reference0 == "unamused"; "\s[220]"
+}
+
+OnSpectrePlugin.Possession
+{
+	if RAND(4) == 0
+	{
+		"\0\s[0]Interesting..."
+		"\0\s[11]There appears to be spiritual activity in this area. \s[0]You should take care."
+		"\0\s[220]Hmm."
+		"\0\s[20]Borrowing, are we...?"
+		"\0\s[13]Evidently this cave is haunted... %(smoke(2))\s[213]Pity."
+		"\0\s[20]Intriguing that you would choose me and not the far weaker human beside me... \s[213]I'll allow it, for now."
+		"\0\s[220]It's a bit arrogant to take the body of a god, isn't it?"
+		"\0\s[222]I'm honestly a little impressed you've managed this..."
+		"\0\s[20]A strange feeling... \s[220]Interesting."
+	}
 }
