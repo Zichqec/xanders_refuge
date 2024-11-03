@@ -1,6 +1,7 @@
 descript
 {
 	version,1
+	//satolist.palette.frame,150,150
 }
 
 //Blinks
@@ -219,4 +220,11 @@ surface.append0-231,!10,!112
 {
 	animation10.interval,never
 	animation10.pattern0,stop,1
+}
+
+//Satolist settings
+surface.append0-9,11-240
+{
+//satolist.palette.offset,100,0
+//satolist.palette.expand,0.50
 }
