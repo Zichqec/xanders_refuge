@@ -43,13 +43,16 @@ SakuraMenuGreetings
 OnSakuraMenu : all
 {
 	//This stuff to do with the Eventid is just checking if the user opened the menu normally or if it was reopened by selecting a talk rate
-	if SHIORI3FW.Eventid != "OnMouseDoubleClick"; "\C\![lock,balloonrepaint]\c"
+	_isinitial = 0
+	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; _isinitial = 1
+	
+	if !_isinitial; "\C\![lock,balloonrepaint]\c"
 	"\0\![set,autoscroll,disable]"
 	
 	
 	_greet = ""
-	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; _greet = SakuraMenuGreetings
-	elseif reference0 != "";_greet = reference0
+	if _isinitial; _greet = SakuraMenuGreetings
+	elseif reference0 != ""; _greet = reference0
 	
 	"\n\n\n\![quicksection,true]\![no-autopause]"
 	
@@ -77,7 +80,7 @@ OnSakuraMenu : all
 	
 	"\_l[0,0]"
 	
-	if SHIORI3FW.Eventid == "OnMouseDoubleClick";
+	if _isinitial;
 	{
 		_greet = OnTranslateInternal.AutoPause(_greet)
 		"\![quicksection,false]"

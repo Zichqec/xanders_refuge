@@ -86,8 +86,8 @@ OnSurfaceRestore
 	if RAND(4) == 0
 	{
 		_surface = ANY(0,2)
-		_time = (RAND(2) + 1) * 1000 //1-2 seconds
-		smoke(_surface,_time,_time + 500,_time)
+		
+		smoke(_surface)
 		--
 		"\s[%(_surface)13]"
 	}
@@ -105,6 +105,7 @@ OnSurfaceRestore
 }
 
 //A little bit of custom code to make him do surface restore randomly between dialogues, to make him a little more lively
+//I have ONE TIME seen this trigger when _since was 0, but that was after i turned the talk rate off... I think it's fine. _since counts up while the balloon is still open, so it should be fine.
 OnSecondChange
 {
 	_since = GETSECCOUNT - SHIORI3FW.TalkEndTime
@@ -149,8 +150,8 @@ FormatLinks : all
 	{
 		_argv[_i] //Add the link/title
 		//Alternate between adding %ASC(1) or %ASC(2)
-		if _i % 2 == 1; "%ASC(2)"
-		else; "%ASC(1)"
+		if _i % 2 == 1; "%(CHR(2))"
+		else; "%(CHR(1))"
 	}
 }
 
@@ -163,11 +164,6 @@ On_sakura.recommendsites
 recommendsites_sakura : array
 {
 	"Zi's Ukagaka Space";	"https://ukagaka.zichqec.com/"
-}
-
-On_sakura.portalsites 
-{
-	FormatLinks(portalsites_sakura)
 }
 
 username
