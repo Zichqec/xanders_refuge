@@ -124,7 +124,6 @@ BalloonIsOpen
 	"balloon" _in_ status
 }
 
-//Happens when the ghost is unminimized. You *can* include dialogue, but you don't *have* to. I have included this event because if you don't, it defaults to \0\s[0]\1\s[10], which you don't want in some cases, such as if your ghost uses different surfaces or has a different number of characters.
 OnWindowStateRestore
 {
 	OnSurfaceRestore
@@ -201,65 +200,4 @@ On_getaistateex : all
 AI_Graphs : array
 {
     "RandomTalk,overthere,closeshave,weirdinvention"
-}
-
-OnNeedlePoke : nonoverlap
-{
-	"\0\s[11].\w8.\w8.\w8\w8\w8\w8\w8\s[0]"
-	"\0\s[211].\w8.\w8.\w8\w8\w8\w8\w8\s[200]"
-	"\0\s[13].\w8.\w8."
-	"\0\s[213].\w8.\w8."
-	"\0\s[111]You do realize that I'm a god and your mortal weapons will have no effect on me,\w4%(br)correct?"
-	"\0\s[11]Is that supposed to hurt?"
-	"\0\s[0]Cute."
-	"\0\s[213]You understand that this is futile, right?"
-	"\0\s[13]What do you hope to achieve with this...?"
-	"\0\s[21]If that's supposed to hurt, it doesn't."
-	"\0\s[221]The foolishness of mortals truly knows no bounds..."
-	"\0\s[0]If you hope to become a god slayer, you'll need a stronger weapon than that."
-	"\0\s[31]Can I help you?"
-	"\0\s[131]Is that supposed to be a weapon? It%(br)doesn't look particularly deadly."
-	"\0\s[231]You've succeeded in putting a tiny hole in my shirt, congratulations."
-	"\0\s[200]Mortals."
-	"\0\s[0]Oh my, such a vicious attack. \s[11]I'm shaking in my boots."
-	"\0\s[0]Taking out some frustration, are we?"
-	"\0\s[11]That puny ""weapon"" of yours is only barely perceptible to me, for your information."
-}
-
-OnSpectrePlugin.ConfirmCalibration
-{
-	//Add expression names as references here in any order that should be omitted from the calibration...
-	"\![raiseplugin,Spectre,OnCustomCalibrationConfirm,embarrassed,smile,relieved,sweat,indignant]"
-}
-
-OnSpectrePlugin.Surface
-{
-	if reference0 == "normal"; "\s[11]"
-	//elseif reference0 == "embarrassed"; "\s[14]"
-	elseif reference0 == "surprised"; "\s[30]"
-	elseif reference0 == "anxious"; "\s[22]"
-	elseif reference0 == "discouraged"; "\s[13]"
-	//elseif reference0 == "smile"; "\s[1]"
-	//elseif reference0 == "relieved"; "\s[4]"
-	elseif reference0 == "angry"; "\s[21]"
-	//elseif reference0 == "sweat"; "\s[9]"
-	//elseif reference0 == "indignant"; "\s[3]\i[6]"
-	elseif reference0 == "thinking"; "\s[222]"
-	elseif reference0 == "unamused"; "\s[220]"
-}
-
-OnSpectrePlugin.Possession
-{
-	if RAND(4) == 0
-	{
-		"\0\s[0]Interesting..."
-		"\0\s[11]There appears to be spiritual activity in this area. \s[0]You should take care."
-		"\0\s[220]Hmm."
-		"\0\s[20]Borrowing, are we...?"
-		"\0\s[13]Evidently this cave is haunted... %(smoke(2))\s[213]Pity."
-		"\0\s[20]Intriguing that you would choose me and not the far weaker human beside me... \s[213]I'll allow it, for now."
-		"\0\s[220]It's a bit arrogant to take the body of a god, isn't it?"
-		"\0\s[222]I'm honestly a little impressed you've managed this..."
-		"\0\s[20]A strange feeling... \s[220]Interesting."
-	}
 }
