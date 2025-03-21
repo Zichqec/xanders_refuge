@@ -147,5 +147,5 @@ OnChangeTalkrate
 
 OnMenuClose
 {
-	"\_w[%((RAND(3) + 1) * 1000)]%(OnSurfaceRestore)\_w[3000]"
+	"\_w[%((RAND(3) + 1) * 1000)]%(OnSurfaceRestore)"
 }
