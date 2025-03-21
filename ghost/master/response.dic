@@ -110,13 +110,13 @@ OnAskGods.Bridge : all
 {
 	if reference0 == "Xaeyar"
 	{
-		"\0\s[0]Right... you wanted to know about me in particular. \s[222]How to explain... I don't usually have to tell people about myself. \w8\w8\n\n %(smoke)\s[111]As I said previously, I am the god of luck. %(XaeyarDescript)"
+		"\0\s[0]Right... you wanted to know about me in particular. \s[222]How to explain... I don't usually have to tell people about myself. \w8\w8\n\n %(smoke)\s[111]As I said previously, I am the god of luck. %(XaeyarDescript)\x"
 	}
 	else
 	{
 		"\0\s[222]Yes, yes, of course. You wanted to know about %(reference0) in particular. \s[11]Hmm. \w8\s[0]I don't usually have to explain my brethren, where do I begin... \w8\w8\n\n %(smoke)"
 		--
-		"\![embed,OnAskGods,%(reference0)]"
+		"\![embed,OnAskGods,%(reference0)]\x"
 	}
 }
 
