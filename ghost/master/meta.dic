@@ -101,12 +101,11 @@ OnUpdateComplete
 
 OnUpdateFailure
 {	
-	_file = SPLITPATH(reference1)[2] + SPLITPATH(reference1)[3] //For MD5 errors, this gets the name and extension of the offending file
 	_reason = reference0
 	case reference0
 	{
 		when "timeout"; _reason = "connection timed out"
-		when "md5 miss"; _reason = "MD5 error on file %(_file)\n\nPlease contact the ghost author for assistance"
+		when "md5 miss"; _reason = "MD5 error on file %(reference1)\n\nPlease contact the ghost author for assistance"
 		when "artificial"; _reason = "canceled by user"
 	}
 	"\0\i[10]Could not update: %(_reason)."
