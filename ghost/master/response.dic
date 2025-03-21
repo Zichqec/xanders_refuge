@@ -48,7 +48,7 @@ OnAskGods : nonoverlap_pool
 		}
 		elseif reference0 == "Tohmjir"
 		{
-			"\0\s[11]Tohmjir is the god of growth and decay. \s[111]I imagine that sounds scary to a mortal, but he's one of the least scary gods you could meet. \s[31]The man just wants to grow plants and watch over decomposing skulls,%(br)how can he be faulted for that? \n\n \s[0]Well, that's not entirely true. \s[11]He also wants good food and drink, which I think is why his domain has to do with growth in the first place. \s[200]He always seems content, so maybe he's onto something." //TODO br here is making it not pause
+			"\0\s[11]Tohmjir is the god of growth and decay. \s[111]I imagine that sounds scary to a mortal, but he's one of the least scary gods you could meet. \s[31]The man just wants to grow plants and watch over decomposing skulls,\w4%(br)how can he be faulted for that? \n\n \s[0]Well, that's not entirely true. \s[11]He also wants good food and drink, which I think is why his domain has to do with growth in the first place. \s[200]He always seems content, so maybe he's onto something." //br here made it not pause, so it gets a manual pause...
 		}
 		elseif reference0 == "Nemara"
 		{
