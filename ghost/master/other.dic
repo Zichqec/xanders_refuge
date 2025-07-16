@@ -166,7 +166,7 @@ recommendsites_sakura : array
 
 br
 {
-	if SHIORI3FW.BalloonName == "Flip of a Coin"; "\n"
+	if SHIORI3FW.BalloonName == "Flip of a Coin"; " \c[char,1]\n"
 	else; " "
 }
 

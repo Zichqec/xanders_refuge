@@ -4,7 +4,7 @@ OnNeedlePoke : nonoverlap
 	"\0\s[211].\w8.\w8.\w8\w8\w8\w8\w8\s[200]"
 	"\0\s[13].\w8.\w8."
 	"\0\s[213].\w8.\w8."
-	"\0\s[111]You do realize that I'm a god and your mortal weapons will have no effect on me,\w4%(br)correct?"
+	"\0\s[111]You do realize that I'm a god and your mortal weapons will have no effect on me,%(br)correct?"
 	"\0\s[11]Is that supposed to hurt?"
 	"\0\s[0]Cute."
 	"\0\s[213]You understand that this is futile, right?"
