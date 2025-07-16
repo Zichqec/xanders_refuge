@@ -56,8 +56,12 @@ OnSakuraMenu : all
 	
 	"\n\n\n\![quicksection,true]\![no-autopause]"
 	
-	if LastTalk != ""; "  \![*]\q[Say that again,OnLastTalk]"
 	"\![*]\q[Talk to me,OnAITalk]  "
+	switch LastTalk == ""
+	{
+		"\![*]\__q[OnLastTalk]Say that again\__q"
+		"\![*]\f[color,disable]Say that again\f[color,default]"
+	}
 	"\n"
 	
 	"\![*]%(StoryQuestion)"
