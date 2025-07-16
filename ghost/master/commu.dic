@@ -30,15 +30,10 @@ OnSpectrePlugin.ConfirmCalibration
 OnSpectrePlugin.Surface
 {
 	if reference0 == "normal"; "\s[11]"
-	//elseif reference0 == "embarrassed"; "\s[14]"
 	elseif reference0 == "surprised"; "\s[30]"
 	elseif reference0 == "anxious"; "\s[22]"
 	elseif reference0 == "discouraged"; "\s[13]"
-	//elseif reference0 == "smile"; "\s[1]"
-	//elseif reference0 == "relieved"; "\s[4]"
 	elseif reference0 == "angry"; "\s[21]"
-	//elseif reference0 == "sweat"; "\s[9]"
-	//elseif reference0 == "indignant"; "\s[3]\i[6]"
 	elseif reference0 == "thinking"; "\s[222]"
 	elseif reference0 == "unamused"; "\s[220]"
 }

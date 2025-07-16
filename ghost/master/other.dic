@@ -38,19 +38,19 @@ OnTranslateInternal.AutoPause
 	
 	if "\![no-autopause]" !_in_ _talk
 	{
-		_talk = REPLACE(_talk,", ",",\w4 ") // ,
-		_talk = REPLACE(_talk,". ",".\w8\w8 ") // .
-		_talk = REPLACE(_talk,"? ","?\w8\w8 ") // ?
-		_talk = REPLACE(_talk,"! ","!\w8\w8 ") // !
-		_talk = REPLACE(_talk,"; ",";\w8 ") // ;
-		_talk = REPLACE(_talk,": ",":\w8 ") // :
-		_talk = REPLACE(_talk,"\n\n ","\n\n\w8\w8") // linebreak
+		_talk = REPLACE(_talk,", ",",\w4 ")
+		_talk = REPLACE(_talk,". ",".\w8\w8 ")
+		_talk = REPLACE(_talk,"? ","?\w8\w8 ")
+		_talk = REPLACE(_talk,"! ","!\w8\w8 ")
+		_talk = REPLACE(_talk,"; ",";\w8 ")
+		_talk = REPLACE(_talk,": ",":\w8 ")
+		_talk = REPLACE(_talk,"\n\n ","\n\n\w8\w8")
 	}
 	
 	_talk
 }
 
-OnAiTalk
+OnAITalk
 {
 	if CHAIN.IDName == ""
 	{
@@ -148,7 +148,7 @@ FormatLinks : all
 	for _i = 0; _i < ARRAYSIZE(_argv); _i++
 	{
 		_argv[_i] //Add the link/title
-		//Alternate between adding %ASC(1) or %ASC(2)
+		//Alternate between adding %(CHR(1)) or %(CHR(2))
 		if _i % 2 == 1; "%(CHR(2))"
 		else; "%(CHR(1))"
 	}
@@ -159,15 +159,9 @@ On_sakura.recommendsites
 	FormatLinks(recommendsites_sakura)
 }
 
-//These are the websites linked in the top option of the sakura's right click menu. The format is simple; write the label of the link on the left followed by a semicolon, and then on the right, the url to link to. These should be separate strings.
 recommendsites_sakura : array
 {
 	"Zi's Ukagaka Space";	"https://ukagaka.zichqec.com/"
-}
-
-username
-{
-	SHIORI3FW.UserName
 }
 
 br

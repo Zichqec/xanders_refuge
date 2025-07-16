@@ -115,7 +115,7 @@ OnAskGods.Bridge : all
 	else
 	{
 		"\0\s[222]Yes, yes, of course. You wanted to know about %(reference0) in particular. \s[11]Hmm. \w8\s[0]I don't usually have to explain my brethren, where do I begin... \w8\w8\n\n %(smoke)"
-		--
+		
 		"\![embed,OnAskGods,%(reference0)]\x"
 	}
 }
