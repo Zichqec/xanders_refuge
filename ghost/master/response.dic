@@ -87,7 +87,7 @@ OnAskGods : nonoverlap_pool
 		{
 			if AskedGods == 2 //If you asked in the firstboot
 			{
-				"\t\*\0\s[231]Did I not explain this to you already? \s[131]Xaeyar is my name, or your mortal approximation of it. \s[111]Xaeyar, god of luck? One of several deities that influences this world you inhabit? \w8\w8\w8\n\n \s[31]This really doesn't ring a bell for you at all? \w8%(smoke(2))\s[213]I thought these things were taught in school... \n\n \s[200]I don't know how you've come this far in life without any familiarity at all, but I suppose I could tell you about myself and my... \s[220]companions... \s[221]if you want to know. \n\n \s[11]It will be a far more accurate account than you could get from mortal teachings anyhow, \s[130]you would not believe the sorts of wild assumptions your kind makes about us."
+				"\t\*\0\s[231]Did I not explain this to you already? \s[131]Xaeyar is my name, or your mortal approximation of it. \s[111]Xaeyar, god of luck? One of several deities that influences this world you inhabit? \w8\w8\w8\n\n \s[31]This really doesn't ring a bell for you at all?%(br)\w8%(smoke(2))\s[213]I thought these things were taught in school... \n\n \s[200]I don't know how you've come this far in life without any familiarity at all, but I suppose I could tell you about myself and my... \s[220]companions... \s[221]if you want to know. \n\n \s[11]It will be a far more accurate account than you could get from mortal teachings anyhow, \s[130]you would not believe the sorts of wild assumptions your kind makes about us."
 			}
 			else //If you didn't ask
 			{
