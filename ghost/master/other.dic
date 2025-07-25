@@ -52,13 +52,13 @@ OnTranslateInternal.AutoPause
 
 OnAITalk
 {
-	if CHAIN.IDName == ""
+	if CHAIN.IDName != ""
 	{
-		LastTalk = RandomTalk
+		LastTalk = ChainTalk
 	}
 	else
 	{
-		LastTalk = ChainTalk
+		LastTalk = RandomTalk
 	}
 	LastTalk
 }
